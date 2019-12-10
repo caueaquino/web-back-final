@@ -35,8 +35,7 @@ exports.login = (req, res, next) => {
       user.token = user.generateJWT();
 
       res.cookie('currentUser', user.toAuthJSON(), {httpOnly: true})
-          .cookie('token', user.token, {httpOnly: true})
-          .redirect('/calendar');
+          .cookie('token', user.token, {httpOnly: true});
     }
 
     return res.status(400)

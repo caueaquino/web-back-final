@@ -48,14 +48,6 @@ describe('Listing Users data', async () => {
                 chai.expect(res.body[res.body.length - 1].name).to.be.equal('testeNode1');
             });
     });
-
-    it('listing users - error 404', () => {
-        chai.request(app)
-            .get('/usrs')
-            .end((err, res) => {
-                chai.expect(res).to.have.status(404);
-            });
-    });
 });
 
 describe('Creation of Users data', async () => {
@@ -150,11 +142,20 @@ describe('Creation of Users data', async () => {
             });
     })
 
-    it('creating user in database - error 404', () => {
+    it('creating user in database - error empy name', () => {
         chai.request(app)
-            .post('/user')
+            .post('/users', {name: '', password: 'asdasd'})
             .end((err, res) => {
-                chai.expect(res).to.have.status(404);
-            })
+                chai.expect(res.data).to.be.equal('saving error');
+            });
+    });
+
+    
+    it('creating user in database - error empy password', () => {
+        chai.request(app)
+            .post('/users', {name: 'testename', password: null})
+            .end((err, res) => {
+                chai.expect(res.data).to.be.equal('saving error');
+            });
     });
 });

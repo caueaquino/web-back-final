@@ -15,6 +15,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// const NodeCache = require( "node-cache" );
+// const myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
+
 app.use(cors());
 app.use(bodyParser.json());
 

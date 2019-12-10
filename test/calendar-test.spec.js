@@ -74,14 +74,6 @@ describe('Getting of Calendars data', async () => {
                 chai.expect(res.body._id).to.be.equal(eventData);
             });
     });
-
-    it('getting and event from database - error 404', () => {
-        chai.request(app)
-            .get('/calenda')
-            .end((err, res) => {
-                chai.expect(res).to.have.status(404);
-            });
-    });
 });
 
 describe('Delete of Calendars event data', async () => {
@@ -130,14 +122,6 @@ describe('Delete of Calendars event data', async () => {
         .end((err, res) => {
             chai.expect(res.body.data).to.be.equal('event id not found');
         });
-    });
-
-    it('deleting an event from database - error 404', () => {
-        chai.request(app)
-            .delete('/calend')
-            .end((err,res) => {
-                chai.expect(res).to.have.status(404);
-            });
     });
 });
 
@@ -232,14 +216,6 @@ describe('Cretion of Calendars data', async () => {
                 chai.expect(res.body[res.body.length-1].name).to.be.equal('testeEvent3');
                 chai.expect(res.body[res.body.length-1].day).to.be.equal('3');
                 chai.expect(res.body[res.body.length-1].hour).to.be.equal('3:00');
-            });
-    });
-
-    it('creating and event in database - error 404', () => {
-        chai.request(app)
-            .post('/calenda')
-            .end((err, res) => {
-                chai.expect(res).to.have.status(404);
             });
     });
 });
