@@ -14,6 +14,10 @@ class CalendarController {
         const calendars = await Calendar.create(req.body);
         return res.json(calendars);
     }
+    async delete(req, res) {
+        await Calendar.deleteOne(req.body.id);
+        return res.json({data: true});
+    }
 }
 
 module.exports = new CalendarController();
