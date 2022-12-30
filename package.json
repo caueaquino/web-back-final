@@ -10,7 +10,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "chai-subset": "^1.6.0",
-    "mocha": "^6.0.2"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -28,7 +28,7 @@
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^2.3.10",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "mongoose": "^5.7.7",
     "morgan": "~1.9.1",
     "node-cache": "^5.1.0",
